@@ -142,14 +142,61 @@ different values as well as the below:
 console.log(0.3 == currencyAddition(0.1, 0.2)) // true
 console.log(0.3 == currencyOperation(0.1, 0.2, '+')) // true */
 
-
-function currencyAddition(float1, float2) {
-    let NumberOne = float1 * 100;
-    let NumberTwo = float2 * 100;
-
-    return (NumberOne + NumberTwo)/ 100
-
-}
+/ function currencyAddition(float1, float2){
+      let sumFloat = (float1 + float2).toFixed(2);
+        console.log(sumFloat);
+    }
+    currencyAddition(twentyCents, tenCents);
+    
+    function currencyOperation(float1, float2, operation){
+        
+        let results = 0;
+    
+        switch(operation){
+            case '+': 
+                    results = (float1 + float2).toFixed(2);
+                    break;
+            case '-':
+                    results = (float1 - float2).toFixed(2);
+                    break;
+            case '*':
+                    results = (float1 * float2).toFixed(2);
+                    break;
+            case '/':
+                    results = (float1 / float2).toFixed(2);
+                    break;
+    default:
+                    results = (float1 + float2).toFixed(2);
+                                                
+        }
+        return results;
+    }
+    console.log(currencyOperation(twentyCents,tenCents,'/'));
+    
+    function currencyOperation2(float1, float2, operation, numDecimals) { 
+    
+        let results = 0;
+    
+        switch(operation){
+            case '+': 
+                    results = (float1 + float2).toFixed(numDecimals);
+                    break;
+            case '-':
+                    results = (float1 - float2).toFixed(numDecimals);
+                    break;
+            case '*':
+                    results = (float1 * float2).toFixed(numDecimals);
+                    break;
+            case '/':
+                    results = (float1 / float2).toFixed(numDecimals);
+                    break;
+            default:
+                    results = (float1 + float2).toFixed(numDecimals);
+                                                
+        }
+        return results;
+    }
+console.log(currencyOperation2(twentyCents, tenCents,'*',3));
 
 
 
